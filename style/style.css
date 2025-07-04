@@ -1,0 +1,63 @@
+    /* 重置 & 全域 */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; background: #fff; color: #2E2E2E; }
+    a { text-decoration: none; color: inherit; }
+
+    /* 容器 */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 50px 16px;
+    }
+
+    /* ===== Header 全域樣式 ===== */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    /* 置中容器，控制寬度和左右間距 */
+    .header-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px;
+      height: 64px;               /* Header 高度 */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .logo img {
+      height: 40px;               /* 依實際 Logo 高度調整 */
+      display: block;
+    }
+
+    /* Nav 列表 */
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    .site-nav a {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #2E2E2E;
+      padding: 8px;
+      transition: color .2s, background .2s;
+    }
+    .site-nav a:hover {
+      color: #D4AF37;
+      background: rgba(212,175,55,0.1);
+      border-radius: 4px;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center; font-size: 14px; color: #737373;
+      margin: 60px 0 16px;
+    }
