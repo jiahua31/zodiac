@@ -39,29 +39,36 @@
       gap: 24px;
     }
     .card {
-      display: flex;
-      align-items: center;
+      padding: 0;
+    }
+    .card-inner {
+      display: flex;              /* ← 左右排版 */
+      align-items: center;        /* 垂直置中 */
+      max-width: 480px;           /* 卡片最大寬度，可調 */
+      width: 100%;
       padding: 16px;
-      background: #FFFFFF;
+      background: #FFF;
       border: 1px solid #E0E0E0;
       border-radius: 8px;
-      transition: transform 0.3s ease, border-image 0.3s ease;
+      transition: transform .3s, border-image .3s;
     }
-    .card:hover {
+    .card-inner:hover {
       transform: translateY(-4px);
       border: 2px solid transparent;
       border-image: linear-gradient(45deg, #A3BFD9, #D4AF37) 1;
     }
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-      margin-right: 16px;
-      /* 假設你用 SVG icon，下面只是示意 */
-      fill: #737373;
+    /* Icon區塊 */
+    .card-icon-wrapper {
+      flex: 0 0 48px;             /* 固定 48px 寬度 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 24px;         /* 圖文間距 */
+      margin-left: 24px;  
     }
+    /* 文字區塊 */
     .card-content {
-      flex: 1;
+      flex: 1;                    /* 撐滿剩餘空間 */
     }
     .card-content h3 {
       font-size: 18px;
@@ -72,9 +79,19 @@
       color: #737373;
       line-height: 1.4;
     }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      fill: #737373;
+    }
 
 
     /* 手機版 */
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: 1fr;
+        /* 限制 grid 自身不撐滿螢幕 */
+        max-width: 480px;    /* 根據卡片寬度和間距調整 */
+        margin: 0 auto;      /* 水平置中 */
+      }
     }
