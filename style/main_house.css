@@ -44,8 +44,8 @@
 
     }
     .card-img-placeholder img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 80%;
+      max-height: 80%;
       object-fit: cover;           /* 保持比例填滿容器 */
       display: block;
     }
