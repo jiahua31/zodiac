@@ -3,15 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <title>星座筆記本</title>
-
+  <link href="style/zodiac_home.css" rel="stylesheet" type="text/css">
+  <link href="style/style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
   
 </head>
-<body>
+<body style="background: url(https://free-paper-texture.com/p/p0428/p0428_m.jpg) ;">
 
-<h1>hello</h1>
+  <div class="container">
+
+    <!-- ===== 全站共用 Header 區塊 ===== -->
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="zodiac_home.html">
+            <img src="images/logo.png" alt="星座筆記本Logo" />
+          </a>
+        </div>
+
+        <!-- 右側 Nav -->
+        <nav class="site-nav">
+          <ul>
+            <li><a href="zodiac_home.html">首頁</a></li>
+            <li><a href="main_house.html">宮位解析</a></li>
+            <li><a href="#">行星解析</a></li>
+            <li><a href="#">2月30日運勢</a></li>
+            <li><a href="#">Podcast 重點</a></li>
+            <!-- 未來要加新頁面時，直接在這裡新增 <li><a>…</a></li> 即可 -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Title & Podcast -->
+    <div class="title-area">
+      <h1>星座筆記本</h1>
+      <a href="#" class="podcast-btn" id="openPodcast">▶ Podcast 收聽</a>
+    </div>
+
+    <!-- 卡片列表 -->
+    <div class="grid">
+      <!-- 卡片範例 1 -->
+      <a href="main_house.html" class="card">
+        <div class="card-inner">
+          <div class="card-icon-wrapper">
+            <img src="images/shape1.png" class="card-icon">
+          </div>
+          <div class="card-content">
+            <h3>宮位解析</h3>
+            <p>一宮～十二宮解析</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 卡片範例 2 -->
+      <a href="#" class="card">
+        <div class="card-inner">
+          <div class="card-icon-wrapper">
+            <img src="images/shape2.png" class="card-icon">
+          </div>
+          <div class="card-content">
+            <h3>行星解析</h3>
+            <p>行星解析攻略</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 卡片範例 3 -->
+      <a href="#" class="card">
+        <div class="card-inner">
+          <div class="card-icon-wrapper">
+            <img src="images/shape3.png" class="card-icon">
+          </div>
+          <div class="card-content">
+            <h3>2月30日運勢</h3>
+            <p>個人運勢即時更新</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 卡片範例 4 -->
+      <a href="#" class="card">
+        <div class="card-inner">
+          <div class="card-icon-wrapper">
+            <img src="images/shape4.png" class="card-icon">
+          </div>
+          <div class="card-content">
+            <h3>Podcast 重點</h3>
+            <p>唐陽雞酒屋 Podcast 精華整理</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+    <!-- Footer -->
+    <footer>
+      ◎ 唐陽雞酒屋文字筆記.無商業用途
+    </footer>
+
+  </div>
+
+  <!-- Podcast Modal -->
+  <div id="podcastModal" style="
+      display:none;
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.4); align-items:center; justify-content:center;
+    ">
+    <div style="
+        background:#fff; border-radius:8px; padding:24px;
+        max-width:320px; width:90%; text-align: center;">
+      <h2 style="margin-bottom:16px;">唐陽雞酒屋<br/>可收聽平台</h2>
+      <ul style="list-style:none; padding:0; font-size:16px; color:#2E2E2E; line-height: 2em;">
+        <li><img src="images/podcasts_apple.png" width="20"/><a href="https://reurl.cc/vdVXDy" target="_blank"> <u>Apple</u></a></li>
+        <li><img src="images/podcasts_spotify.png" width="20"/><a href="https://reurl.cc/loGX59" target="_blank"> <u>Spotify</u></a></li>
+        <li><img src="images/podcasts_kkbox.png" width="20"/><a href="https://reurl.cc/YvyQO0" target="_blank"> <u>KKBOX</u></a></li>
+        <li><img src="images/podcast_firstory.png" width="20"/><a href="https://reurl.cc/ErEDn0" target="_blank"> <u>Firstory</u></a></li>
+      </ul>
+      <button id="closePodcast" style="
+          margin-top:24px; padding:8px 16px;
+          background:#D4AF37; border:none; border-radius:4px; 
+          font-weight:600; cursor:pointer;">
+        關閉
+      </button>
+    </div>
 
     
-
+  <script>
+    // 打開／關閉 Podcast Modal
+    document.getElementById('openPodcast').onclick = e => {
+      e.preventDefault();
+      document.getElementById('podcastModal').style.display = 'flex';
+    };
+    document.getElementById('closePodcast').onclick = () => {
+      document.getElementById('podcastModal').style.display = 'none';
+    };
+  </script>
 
 </body>
 </html>
